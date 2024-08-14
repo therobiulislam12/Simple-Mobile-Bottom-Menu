@@ -1,0 +1,20 @@
+{
+    "name": "therobiulislam12/simple-mobile-bottom-menu",
+    "description": "Simple Mobile Bottom Menu plugin for smooth navigation with customizable styles.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Robiul Islam",
+            "email": "therobiulislam12@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Mobile\\Menu\\": "includes/"
+        },
+        "files": ["includes/functions.php"]
+    }
+}
