@@ -11,7 +11,9 @@ class Admin {
      * constructor method
      */
     public function __construct(){
-        
+
+        new Admin\SMBM_Menu();
+
     }
 
 }
