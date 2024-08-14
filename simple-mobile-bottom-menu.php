@@ -56,6 +56,67 @@ final class SMBM_Main_Class {
      */
     private function __construct() {
 
+        // define constant
+        $this->smbm_define_constant();
+
+        // init hook
+        add_action( 'init', array( $this, 'smbm_init' ) );
+
+        // activation hook
+        register_activation_hook( __FILE__, array( $this, 'smbm_active' ) );
+
+        // deactivation hook
+
+        // plugins loaded hook
+        add_action( 'plugin_loaded', array( $this, 'smbm_init_plugin' ) );
+
+    }
+
+    /**
+     * After install plugin, call this hook
+     * So, do here all type of this work
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function smbm_init_plugin() {
+
+    }
+
+    /**
+     * Init hook for create some menu
+     * If need any work do with init hook
+     * do here
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function smbm_init() {
+
+    }
+
+    /**
+     *
+     * Activation hook
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function smbm_active() {
+
+    }
+
+    public function smbm_define_constant() {
+
+        define( 'SMBM_MOBILE_MENU_VERSION', self::version );
+        define( 'SMBM_MOBILE_MENU_FILE', __FILE__ );
+        define( 'SMBM_MOBILE_MENU_PATH', __DIR__ );
+        define( 'SMBM_MOBILE_MENU_URL', plugins_url( '', SMBM_MOBILE_MENU_FILE ) );
+        define( 'SMBM_MOBILE_MENU_ASSETS', SMBM_MOBILE_MENU_URL . '/assets' );
+
     }
 
     /**
