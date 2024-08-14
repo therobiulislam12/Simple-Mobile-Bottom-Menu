@@ -2,6 +2,7 @@
 
 namespace Mobile\Menu;
 
+
 /**
  * Admin class work for admin-panel
  */
@@ -12,7 +13,7 @@ class Admin {
      */
     public function __construct(){
 
-        new Admin\SMBM_Menu();
+        
 
     }
 

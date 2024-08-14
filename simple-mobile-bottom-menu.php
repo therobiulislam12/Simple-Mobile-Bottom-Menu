@@ -70,6 +70,8 @@ final class SMBM_Main_Class {
         // plugins loaded hook
         add_action( 'plugin_loaded', array( $this, 'smbm_init_plugin' ) );
 
+        add_action( 'admin_menu', array( $this, 'smbm_add_admin_menu' ) );
+
     }
 
     /**
@@ -83,7 +85,7 @@ final class SMBM_Main_Class {
     public function smbm_init_plugin() {
 
         if(is_admin()){
-            new Mobile\Menu\Admin();
+            
         } else {
             
         }
@@ -123,6 +125,11 @@ final class SMBM_Main_Class {
         define( 'SMBM_MOBILE_MENU_URL', plugins_url( '', SMBM_MOBILE_MENU_FILE ) );
         define( 'SMBM_MOBILE_MENU_ASSETS', SMBM_MOBILE_MENU_URL . '/assets' );
 
+    }
+
+    public function smbm_add_admin_menu(){
+        $menu = new Mobile\Menu\Admin\Menu;
+        $menu->smbm_add_menu();
     }
 
     /**
