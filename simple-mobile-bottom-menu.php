@@ -70,7 +70,11 @@ final class SMBM_Main_Class {
         // plugins loaded hook
         add_action( 'plugin_loaded', array( $this, 'smbm_init_plugin' ) );
 
+        // admin menu
         add_action( 'admin_menu', array( $this, 'smbm_add_admin_menu' ) );
+
+        // enqueue script
+        add_action('wp_enqueue_scripts', array($this, 'smbm_enqueue_scripts'));
 
     }
 
@@ -84,10 +88,10 @@ final class SMBM_Main_Class {
      */
     public function smbm_init_plugin() {
 
-        if(is_admin()){
-            
+        if ( is_admin() ) {
+
         } else {
-            
+            new Mobile\Menu\Frontend();
         }
 
     }
@@ -117,6 +121,15 @@ final class SMBM_Main_Class {
 
     }
 
+    /**
+     * register css and js
+     * 
+     * @return void
+     */
+    public function smbm_enqueue_scripts(){
+        wp_register_style('custom', plugin_dir_path( '/assets/css/style.css' ), [], '1.0.0', 'all');
+    }
+
     public function smbm_define_constant() {
 
         define( 'SMBM_MOBILE_MENU_VERSION', self::version );
@@ -127,7 +140,7 @@ final class SMBM_Main_Class {
 
     }
 
-    public function smbm_add_admin_menu(){
+    public function smbm_add_admin_menu() {
         $menu = new Mobile\Menu\Admin\Menu;
         $menu->smbm_add_menu();
     }
