@@ -32,7 +32,7 @@ if ( isset( $_POST['smbm_general_settings'] ) ) {
                 </td>
             </tr>
 
-            <tr>
+            <!-- <tr>
                 <th scope="row">
                     <label for="height"><?php _e( 'Height :', 'ss_slider' );?></label>
                 </th>
@@ -40,7 +40,7 @@ if ( isset( $_POST['smbm_general_settings'] ) ) {
                     <input type="text" name="height" id="height" class="regular-text" value="<?php echo get_option( 'simple_slider_height' ); ?>">
                     <p class="description">Height Width Ratio must be 1.73 : 1</p>
                 </td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 

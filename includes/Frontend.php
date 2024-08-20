@@ -14,13 +14,14 @@ class Frontend{
 
     public function smbm_add_style_on_head(){
         $show_on_desktop = get_option('simple_bottom_mobile_menu_show_on_desktop', true);
-        $style = "<style>
-            @media only screen and (min-width: 1025px) {
-                nav {
-                    display: {$show_on_desktop} !important;
-                }
-            }
-        </style>";
+        $style = "<style id='simple-bottom-menu'>
+    @media only screen and (min-width: 1025px) {
+        nav {
+            display: {$show_on_desktop} !important;
+        }
+    }
+</style>
+        ";
 
         echo $style;
     }
