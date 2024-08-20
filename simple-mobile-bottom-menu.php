@@ -140,6 +140,10 @@ final class SMBM_Main_Class {
 
     }
 
+    /**
+     * Add Admin menu
+     * @return void
+     */
     public function smbm_add_admin_menu() {
         $menu = new Mobile\Menu\Admin\Menu;
         $menu->smbm_add_menu();

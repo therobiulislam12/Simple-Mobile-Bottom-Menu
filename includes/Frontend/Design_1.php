@@ -2,13 +2,13 @@
 
 namespace Mobile\Menu\Frontend;
 
-class Design_1_Shortcode{
+class Design_1{
 
     public function __construct(){
-        add_shortcode('smbm-design-1', array($this, 'smbm_design_1'));
+        add_action('wp_footer', array($this, 'smbm_menu_display'));
     }
 
-    public function smbm_design_1(){
+    public function smbm_menu_display(){
         wp_enqueue_style('custom');
         require_once __DIR__ . '/views/design_1.view.php';
     }
