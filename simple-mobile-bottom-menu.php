@@ -74,7 +74,7 @@ final class SMBM_Main_Class {
         add_action( 'admin_menu', array( $this, 'smbm_add_admin_menu' ) );
 
         // enqueue script
-        add_action('wp_enqueue_scripts', array($this, 'smbm_enqueue_scripts'));
+        add_action( 'wp_enqueue_scripts', array( $this, 'smbm_enqueue_scripts' ) );
 
     }
 
@@ -119,19 +119,33 @@ final class SMBM_Main_Class {
      */
     public function smbm_active() {
 
+        $options = [
+            'installed'        => time(),
+            'show_on_desktop'  => 'none',
+        ];
+
+        foreach ( $options as $key => $value ) {
+            $option_name = "simple_bottom_mobile_menu_{$key}";
+            $existing_option = get_option( $option_name );
+
+            if ( !$existing_option ) {
+                update_option( $option_name, $value );
+            }
+        }
+
+        update_option( 'simple_bottom_mobile_menu_version', SMBM_MOBILE_MENU_VERSION );
+
     }
 
     /**
      * register css and js
-     * 
+     *
      * @return void
      */
-    public function smbm_enqueue_scripts(){
-        wp_register_style('smbm-design-1', plugins_url( '/assets/css/style.css', __FILE__ ), [], '1.0.0', 'all');
+    public function smbm_enqueue_scripts() {
+        wp_register_style( 'smbm-design-1', plugins_url( '/assets/css/style.css', __FILE__ ), [], '1.0.0', 'all' );
 
-
-
-        wp_register_script('smbm-design-1', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], '1.0.0', true);
+        wp_register_script( 'smbm-design-1', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], '1.0.0', true );
     }
 
     public function smbm_define_constant() {
