@@ -127,7 +127,11 @@ final class SMBM_Main_Class {
      * @return void
      */
     public function smbm_enqueue_scripts(){
-        wp_register_style('custom', plugin_dir_path( '/assets/css/style.css' ), [], '1.0.0', 'all');
+        wp_register_style('smbm-design-1', plugins_url( '/assets/css/style.css', __FILE__ ), [], '1.0.0', 'all');
+
+
+
+        wp_register_script('smbm-design-1', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], '1.0.0', true);
     }
 
     public function smbm_define_constant() {
