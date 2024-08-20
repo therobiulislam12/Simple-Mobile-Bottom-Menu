@@ -55,16 +55,15 @@ class Menu {
     }
 
     public function smbm_admin_page() {
-        echo "Admin";
+        require_once SMBM_MOBILE_MENU_PATH . '/includes/Admin/views/general.view.php';
     }
 
-    public function smbm_menu_style(){
-        echo "Menu Settings"; 
+    public function smbm_menu_style() {
+        require_once SMBM_MOBILE_MENU_PATH . '/includes/Admin/views/menu-style.view.php';
     }
 
-    public function smbm_pre_made_styles(){
-        echo "Pre made Style"; 
+    public function smbm_pre_made_styles() {
+        require_once SMBM_MOBILE_MENU_PATH . '/includes/Admin/views/pre-made.view.php';
     }
-
 
 }
