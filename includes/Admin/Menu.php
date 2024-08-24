@@ -5,6 +5,28 @@ namespace Mobile\Menu\Admin;
 class Menu {
 
     /**
+     * Main Constructor method
+     */
+    public function __construct() {
+        add_action( 'after_setup_theme', array( $this, 'smbm_menu_register' ) );
+    }
+
+    /**
+     * Register menu with icon options
+     *
+     * @since 1.0.0
+     *
+     * @return mixed
+     */
+    public function smbm_menu_register() {
+        register_nav_menus(
+            array(
+                'smbm-bottom-menu'    => __( 'WP Bottom Menu' )
+            )
+        );
+    }
+
+    /**
      * Add Admin Menu Page
      *
      * @since 1.0.0

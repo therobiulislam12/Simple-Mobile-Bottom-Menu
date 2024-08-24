@@ -107,6 +107,9 @@ final class SMBM_Main_Class {
      */
     public function smbm_init() {
 
+        // get the support of nav menu
+        $register_menu = new Mobile\Menu\Admin\Menu();
+        $register_menu->smbm_menu_register();
     }
 
     /**
@@ -120,8 +123,8 @@ final class SMBM_Main_Class {
     public function smbm_active() {
 
         $options = [
-            'installed'        => time(),
-            'show_on_desktop'  => 'none',
+            'installed'       => time(),
+            'show_on_desktop' => 'none',
         ];
 
         foreach ( $options as $key => $value ) {
