@@ -14,11 +14,12 @@
             <?php 
                 foreach($smbm_menu  as $menu): 
                     $is_active = ($current_url == $menu->url) ? 'active' : '';
+                    $image = get_post_meta($menu->ID, '_menu_item_image', true);
             ?>
                 <li class="nav__item <?php echo esc_attr($is_active); ?>">
                     <a href="<?php echo esc_url($menu->url) ?>" class="nav__item-link">
                         <div class="nav__item-icon">
-                            <img src="http://wplearning.com/wp-content/uploads/2024/08/home.png" alt="<?php echo esc_attr($menu->title) ?>">
+                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($menu->title) ?>">
                         </div>
                         <span class="nav__item-text"><?php echo esc_html($menu->title) ?></span>
                     </a>

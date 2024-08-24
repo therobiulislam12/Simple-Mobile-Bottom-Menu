@@ -76,6 +76,9 @@ final class SMBM_Main_Class {
         // enqueue script
         add_action( 'wp_enqueue_scripts', array( $this, 'smbm_enqueue_scripts' ) );
 
+        // admin enqueue script
+        add_action( 'admin_enqueue_scripts', array( $this, 'smbm_enqueue_admin_scripts' ) );
+
     }
 
     /**
@@ -151,6 +154,19 @@ final class SMBM_Main_Class {
         wp_register_script( 'smbm-design-1', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], '1.0.0', true );
     }
 
+    public function smbm_enqueue_admin_scripts( $hook ) {
+        if ( $hook != 'nav-menus.php' ) {
+            return;
+        }
+        wp_enqueue_media();
+        wp_enqueue_script( 'smbm-custom-admin-js', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ), '', true );
+    }
+
+
+    /**
+     * Define constant for use
+     * @return void
+     */
     public function smbm_define_constant() {
 
         define( 'SMBM_MOBILE_MENU_VERSION', self::version );
