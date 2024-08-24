@@ -19,7 +19,7 @@
                 <li class="nav__item <?php echo esc_attr($is_active); ?>">
                     <a href="<?php echo esc_url($menu->url) ?>" class="nav__item-link">
                         <div class="nav__item-icon">
-                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($menu->title) ?>">
+                            <img src="<?php echo $image ? esc_url($image) : SMBM_MOBILE_MENU_ASSETS . '/img/home.png'; ?>" alt="<?php echo esc_attr($menu->title) ?>">
                         </div>
                         <span class="nav__item-text"><?php echo esc_html($menu->title) ?></span>
                     </a>
