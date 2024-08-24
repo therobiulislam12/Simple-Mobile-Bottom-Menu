@@ -32,6 +32,15 @@ if ( isset( $_POST['smbm_general_settings'] ) ) {
                 </td>
             </tr>
 
+            <tr>
+                <th scope="row">
+                    <label ><?php _e( 'Menu Set :', 'ss_slider' );?></label>
+                </th>
+                <td>
+                    <p>Set Your Menu Options Here <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ) ?>" style="font-weight:bold">Menus</a></p>
+                </td>
+            </tr>
+
             <!-- <tr>
                 <th scope="row">
                     <label for="height"><?php _e( 'Height :', 'ss_slider' );?></label>
