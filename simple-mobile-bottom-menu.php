@@ -89,7 +89,7 @@ final class SMBM_Main_Class {
     public function smbm_init_plugin() {
 
         if ( is_admin() ) {
-
+            new Mobile\Menu\Admin();
         } else {
             new Mobile\Menu\Frontend();
         }

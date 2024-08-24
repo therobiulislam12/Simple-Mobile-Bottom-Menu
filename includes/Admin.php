@@ -13,7 +13,7 @@ class Admin {
      */
     public function __construct(){
 
-        
+        new Admin\Menu_Custom_Field();
 
     }
 
