@@ -24,7 +24,7 @@ class Menu_Custom_Field {
             </label>
         </p>
         <?php
-    }
+}
 
     public function smbm_update_custom_nav_fields( $menu_id, $menu_item_db_id ) {
         if ( isset( $_POST['menu-item-image'][$menu_item_db_id] ) ) {
