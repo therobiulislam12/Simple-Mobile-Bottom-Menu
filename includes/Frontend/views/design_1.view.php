@@ -1,20 +1,21 @@
 <?php 
 
     $menuLocations = get_nav_menu_locations(); 
-    $menuID = $menuLocations['smbm-bottom-menu'];
+    $menuID = isset($menuLocations['smbm-bottom-menu']) ? $menuLocations['smbm-bottom-menu'] : '';
 
     $smbm_menu = wp_get_nav_menu_items($menuID);
     $current_url = get_permalink();
 
 ?>
-
+<?php if(!empty($smbm_menu)) { ?>
 <nav>
     <div class="nav-box">
         <ul class="nav-container">
             <?php 
-                foreach($smbm_menu  as $menu): 
-                    $is_active = ($current_url == $menu->url) ? 'active' : '';
-                    $image = get_post_meta($menu->ID, '_menu_item_image', true);
+                if(is_array($smbm_menu)): 
+                    foreach($smbm_menu  as $menu): 
+                        $is_active = ($current_url == $menu->url) ? 'active' : '';
+                        $image = get_post_meta($menu->ID, '_menu_item_image', true);
             ?>
                 <li class="nav__item <?php echo esc_attr($is_active); ?>">
                     <a href="<?php echo esc_url($menu->url) ?>" class="nav__item-link">
@@ -24,7 +25,10 @@
                         <span class="nav__item-text"><?php echo esc_html($menu->title) ?></span>
                     </a>
                 </li>
-            <?php endforeach; ?>
+            <?php endforeach; endif; ?>
         </ul>
     </div>
 </nav>
+<?php } else {
+    echo '<p>Select Menu location for show Mobile Menu</p>';
+} ?>
