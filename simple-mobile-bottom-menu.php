@@ -68,7 +68,7 @@ final class SMBM_Main_Class {
         // deactivation hook
 
         // plugins loaded hook
-        add_action( 'plugin_loaded', array( $this, 'smbm_init_plugin' ) );
+        add_action( 'plugins_loaded', array( $this, 'smbm_init_plugin' ) );
 
         // admin menu
         add_action( 'admin_menu', array( $this, 'smbm_add_admin_menu' ) );
