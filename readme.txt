@@ -33,15 +33,6 @@ Ideal for mobile-first websites or apps that require a custom bottom navigation 
 
 [Personal Portfolio](https://robiul-islam.netlify.app/ "Robiul Islam")
 
-=== Simple Mobile Bottom Menu ===
-Contributors: robiulrslam12
-Tags: Mobile Bottom Menu, WP Bottom Menu, Simple Mobile Bottom Menu
-Requires at least: 5.5
-Tested up to: 6.6.1
-Requires PHP: 7.2
-Stable tag: 1.0.0
-License: GPL v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Simple Mobile Bottom Menu plugin for smooth navigation with customizable styles.
 
